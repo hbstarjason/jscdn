@@ -10,6 +10,7 @@ https://cdn.jsdelivr.net/gh/hbstarjason/jscdn/01.jpg
 
 
 临灵飞经泥金版http://ltfc.net/img/5574c9f6bf470a4d476598e4
+
 临灵飞经熟宣版http://ltfc.net/img/5574c9f6bf470a4d476598e5
 
 
