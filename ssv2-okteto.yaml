@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssv2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssv2
+  template:
+    metadata:
+      labels:
+        app: ssv2
+    spec:
+      containers:
+      - image: starjason/ssv2
+        name: ssv2
+        env:
+        - name: PASSWORD
+        value: 'ss123456'
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssv2
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "ssv2"
+    port: 8080
+  selector:
+    app: ssv2
