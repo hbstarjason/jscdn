@@ -15,7 +15,7 @@ spec:
       containers:
       - image: starjason/ssv2
         name: ssv2
-        env:
+      env:
         - name: PASSWORD
           value: 'ss123456'
 
