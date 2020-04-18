@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mirror
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mirror
+  template:
+    metadata:
+      labels:
+        app: mirror
+    spec:
+      containers:
+      - image: starjason/docker-google-mirror
+        name: mirror
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mirror
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "mirror"
+    port: 80
+  selector:
+    app: mirror
