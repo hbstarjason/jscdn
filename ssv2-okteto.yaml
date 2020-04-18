@@ -13,11 +13,12 @@ spec:
         app: ssv2
     spec:
       containers:
-      - image: starjason/ssv2
-        name: ssv2
-      - env:
-        name: PASSWORD
-        value: 'ss123456'
+      - name: ssv2
+        image: starjason/ssv2
+        imagePullPolicy: Always
+        env:
+         - name: PASSWORD
+           value: 'ss123456'
 
 ---
 
