@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: v2okteto
+  name: v2okteto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: v2okteto
+  template:
+    metadata:
+      labels:
+        run: v2okteto
+    spec:
+      containers:
+      - image: starjason/v2okteto
+        name: v2okteto
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: v2okteto
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "v2okteto"
+    port: 8080
+  selector:
+    app: v2okteto
