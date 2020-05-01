@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
 
 from selenium import webdriver#实现自动下拉
 from lxml import etree#定位元素（更加高效）
