@@ -14,7 +14,7 @@ class Unsplash:
     def __init__(self):
         self.url='https://unsplash.com/'#请求地址
         self.save_path="./unsplash"#图片保存路径
-        self.driver=webdriver.Chrome('chromedriver')
+        self.driver=webdriver.Chrome('/usr/local/bin/chromedriver')
         #self.driver = webdriver.PhantomJS()
     #实现下拉动作，并返回网页源代码，times:下拉次数
     def do_scroll(self,times):
